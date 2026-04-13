@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indori Fast Food | Order Now</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">IF</span>
+      <div class="brand-text">
+        <h1>Indori Fast Food</h1>
+        <p>Indore’s favourite street food, delivered fast</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="nav-btn" id="open-login-btn" type="button">Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h2>Street style Indori fast food at your doorstep</h2>
+        <p>Poha, Jalebi, Kachori, Samosa and more. Fresh, fast, and full of flavour.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn primary">Order Now</a>
+          <button class="btn ghost" id="view-cart-btn">View Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg" alt="Indori street food platter" />
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <header class="section-header">
+        <h2>Today's Special Menu</h2>
+        <p>Handpicked Indori favourites, ready to order.</p>
+      </header>
+
+      <div class="menu-toolbar">
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for Poha, Samosa, Jalebi..."
+            autocomplete="off"
+          />
+        </div>
+        <div class="filters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="breakfast">Breakfast</button>
+          <button class="filter-btn" data-category="snacks">Snacks</button>
+          <button class="filter-btn" data-category="sweets">Sweets</button>
+          <button class="filter-btn" data-category="beverages">Beverages</button>
+        </div>
+        <div class="sort-box">
+          <select id="sort-select">
+            <option value="recommended">Recommended</option>
+            <option value="price-low-high">Price: Low to High</option>
+            <option value="price-high-low">Price: High to Low</option>
+            <option value="name-az">Name: A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="menu-grid" class="menu-grid">
+        <!-- Food cards injected by app.js -->
+      </div>
+
+      <div id="menu-empty-state" class="empty-state hidden">
+        <h3>No items found</h3>
+        <p>Try clearing filters or searching for something else.</p>
+      </div>
+    </section>
+
+    <section id="about" class="info-section">
+      <div class="info-content">
+        <h2>About Indori Fast Food</h2>
+        <p>
+          Indori Fast Food is a simple online ordering experience inspired by Indore’s iconic street food culture.
+          It’s built to feel like a real ordering app with a clean, fast and mobile-friendly UI.
+        </p>
+        <p>
+          The layout is designed with modern food apps in mind: clear cards, transparent pricing,
+          quick filters, and a responsive menu grid.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="info-section contact-section">
+      <div class="info-content">
+        <header class="section-header">
+          <h2>Contact & Support</h2>
+          <p>Need help with an order, delivery, or menu item? Reach out — we’ll get back to you.</p>
+        </header>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <h3>Call</h3>
+            <p class="muted-line">Speak with support</p>
+            <a class="support-link" href="tel:+917000000000">+91 70000 00000</a>
+            <p class="support-note">10:00 AM – 10:00 PM</p>
+          </article>
+
+          <article class="support-card">
+            <h3>WhatsApp</h3>
+            <p class="muted-line">Quick chat support</p>
+            <a class="support-link" href="https://wa.me/917000000000" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+            <p class="support-note">Typical reply: under 15 mins</p>
+          </article>
+
+          <article class="support-card">
+            <h3>Email</h3>
+            <p class="muted-line">For detailed requests</p>
+            <a class="support-link" href="mailto:support@indorifastfood.com">support@indorifastfood.com</a>
+            <p class="support-note">We reply within 24 hours</p>
+          </article>
+        </div>
+
+        <div class="help-layout">
+          <div class="help-left">
+            <h3>Send a help request</h3>
+            <p class="muted-line">
+              Share your issue and we’ll help you resolve it. If it’s an order-related problem, add your order ID.
+            </p>
+
+            <form id="support-form" class="support-form">
+              <div class="two-col">
+                <label class="modal-field">
+                  <span>Full name</span>
+                  <input type="text" id="support-name" required placeholder="Your name" autocomplete="name" />
+                </label>
+                <label class="modal-field">
+                  <span>Email</span>
+                  <input type="email" id="support-email" required placeholder="you@example.com" autocomplete="email" />
+                </label>
+              </div>
+
+              <div class="two-col">
+                <label class="modal-field">
+                  <span>Phone (optional)</span>
+                  <input type="tel" id="support-phone" placeholder="10-digit number" autocomplete="tel" />
+                </label>
+                <label class="modal-field">
+                  <span>Order ID (optional)</span>
+                  <input type="text" id="support-order-id" placeholder="Eg: IFF-XXXX-XXXX" />
+                </label>
+              </div>
+
+              <label class="modal-field">
+                <span>Topic</span>
+                <select id="support-topic" required>
+                  <option value="order">Order issue</option>
+                  <option value="delivery">Delivery update</option>
+                  <option value="payment">Payment issue</option>
+                  <option value="menu">Menu / pricing</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </label>
+
+              <label class="modal-field">
+                <span>Message</span>
+                <textarea id="support-message" rows="4" required placeholder="Write your message..."></textarea>
+              </label>
+
+              <button class="btn primary" type="submit">Submit Request</button>
+              <p class="modal-footnote">This is a frontend project. Requests are saved on this device.</p>
+            </form>
+          </div>
+
+          <aside class="help-right">
+            <h3>Visit us</h3>
+            <div class="mini-card">
+              <p class="mini-title">Location</p>
+              <p class="mini-text">Rajwada Chowk, Indore</p>
+            </div>
+            <div class="mini-card">
+              <p class="mini-title">Hours</p>
+              <p class="mini-text">Everyday • 8:00 AM – 11:00 PM</p>
+            </div>
+            <div class="mini-card">
+              <p class="mini-title">Tip</p>
+              <p class="mini-text">For faster help, include your order ID in the message.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Support success modal -->
+  <div id="support-success-modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <h3>Request received</h3>
+      <p class="modal-subtitle" id="support-success-text">Thanks! Our team will reach out soon.</p>
+      <button class="btn primary full-width" id="support-success-close" type="button">Done</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <p>&copy; <span id="year"></span> Indori Fast Food</p>
+    </div>
+  </footer>
+
+  <!-- Image error modal -->
+  <div id="image-error-modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <h3>Image not available</h3>
+      <p id="image-error-text">Food image could not be loaded.</p>
+      <button class="btn primary" id="close-image-modal">Okay</button>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart-btn" class="icon-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Total:</span>
+        <strong id="cart-total">₹0</strong>
+      </div>
+      <button class="btn primary full-width" id="checkout-btn">Place Order</button>
+    </div>
+  </aside>
+
+  <!-- Login modal -->
+  <div id="auth-modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <h3 id="auth-title">Login</h3>
+      <p class="modal-subtitle" id="auth-subtitle">Log in to continue with your order.</p>
+      <form id="auth-form" class="modal-form">
+        <label class="modal-field">
+          <span>Email</span>
+          <input type="email" id="auth-email" required placeholder="you@example.com" autocomplete="email" />
+        </label>
+        <label class="modal-field">
+          <span>Password</span>
+          <input type="password" id="auth-password" required placeholder="••••••••" autocomplete="current-password" />
+        </label>
+        <button class="btn primary full-width" type="submit" id="auth-submit-btn">Login</button>
+      </form>
+      <button class="btn ghost full-width" id="auth-toggle-btn" type="button">Create a new account</button>
+      <button class="btn ghost full-width" id="auth-close-btn" type="button">Cancel</button>
+      <p class="modal-footnote" id="auth-footnote">Your account is stored securely on this device (local).</p>
+    </div>
+  </div>
+
+  <!-- Checkout modal (Address -> Payment -> Confirm) -->
+  <div id="checkout-modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-wide" role="document">
+      <div class="modal-steps">
+        <span class="step active" data-step="address">Address</span>
+        <span class="step" data-step="payment">Payment</span>
+        <span class="step" data-step="confirm">Confirm</span>
+      </div>
+
+      <section class="checkout-step" id="step-address">
+        <h3>Delivery Address</h3>
+        <p class="modal-subtitle">Add a delivery address to place your order.</p>
+        <form id="address-form" class="modal-form">
+          <div class="two-col">
+            <label class="modal-field">
+              <span>Full name</span>
+              <input type="text" id="addr-name" required autocomplete="name" />
+            </label>
+            <label class="modal-field">
+              <span>Phone</span>
+              <input type="tel" id="addr-phone" required placeholder="10-digit number" autocomplete="tel" />
+            </label>
+          </div>
+          <label class="modal-field">
+            <span>Address</span>
+            <input type="text" id="addr-line" required placeholder="House no, street, area" autocomplete="street-address" />
+          </label>
+          <div class="two-col">
+            <label class="modal-field">
+              <span>City</span>
+              <input type="text" id="addr-city" required autocomplete="address-level2" />
+            </label>
+            <label class="modal-field">
+              <span>Pincode</span>
+              <input type="text" id="addr-pincode" required placeholder="6 digits" autocomplete="postal-code" />
+            </label>
+          </div>
+          <button class="btn primary full-width" type="submit">Continue to Payment</button>
+        </form>
+      </section>
+
+      <section class="checkout-step hidden" id="step-payment">
+        <h3>Payment</h3>
+        <p class="modal-subtitle">Choose a payment method.</p>
+        <form id="payment-form" class="modal-form">
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="pay-method" value="upi" checked />
+              <div>
+                <strong>UPI</strong>
+                <span>Pay using UPI ID</span>
+              </div>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="pay-method" value="card" />
+              <div>
+                <strong>Card</strong>
+                <span>Visa / MasterCard</span>
+              </div>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="pay-method" value="cod" />
+              <div>
+                <strong>Cash on Delivery</strong>
+                <span>Pay when you receive</span>
+              </div>
+            </label>
+          </div>
+
+          <div id="pay-upi" class="pay-block">
+            <label class="modal-field">
+              <span>UPI ID</span>
+              <input type="text" id="upi-id" placeholder="name@bank" />
+            </label>
+          </div>
+
+          <div id="pay-card" class="pay-block hidden">
+            <label class="modal-field">
+              <span>Card number</span>
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456" inputmode="numeric" />
+            </label>
+            <div class="two-col">
+              <label class="modal-field">
+                <span>Expiry</span>
+                <input type="text" id="card-expiry" placeholder="MM/YY" inputmode="numeric" />
+              </label>
+              <label class="modal-field">
+                <span>CVV</span>
+                <input type="password" id="card-cvv" placeholder="***" inputmode="numeric" />
+              </label>
+            </div>
+          </div>
+
+          <button class="btn primary full-width" type="submit">Review Order</button>
+          <button class="btn ghost full-width" type="button" id="back-to-address-btn">Back</button>
+        </form>
+      </section>
+
+      <section class="checkout-step hidden" id="step-confirm">
+        <h3>Confirm Order</h3>
+        <p class="modal-subtitle">Please review your details before placing the order.</p>
+        <div class="confirm-items">
+          <h4>Items</h4>
+          <div id="confirm-items-list" class="confirm-items-list"></div>
+        </div>
+        <div class="confirm-grid">
+          <div class="confirm-card">
+            <h4>Account</h4>
+            <p id="confirm-email" class="muted-text"></p>
+          </div>
+          <div class="confirm-card">
+            <h4>Address</h4>
+            <p id="confirm-address" class="muted-text"></p>
+          </div>
+          <div class="confirm-card">
+            <h4>Payment</h4>
+            <p id="confirm-payment" class="muted-text"></p>
+          </div>
+          <div class="confirm-card">
+            <h4>Total</h4>
+            <p id="confirm-total" class="muted-text"></p>
+          </div>
+        </div>
+        <button class="btn primary full-width" id="place-order-final-btn" type="button">Place Order</button>
+        <button class="btn ghost full-width" id="back-to-payment-btn" type="button">Back</button>
+        <button class="btn ghost full-width" id="checkout-close-btn" type="button">Cancel</button>
+      </section>
+    </div>
+  </div>
+
+  <!-- Order success modal -->
+  <div id="success-modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <h3>Order Confirmed</h3>
+      <p id="success-text" class="modal-subtitle">Your order has been placed successfully.</p>
+      <button class="btn primary full-width" id="success-home-btn" type="button">Back to Home</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

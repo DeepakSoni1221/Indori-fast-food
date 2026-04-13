@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin • Indori Fast Food</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <main class="admin-root">
+    <section class="admin-panel" id="admin-panel-view">
+      <header class="admin-header">
+        <div>
+          <h1>Indori Fast Food • Admin</h1>
+          <p class="muted">Manage live menu items visible on customer website.</p>
+        </div>
+        <div class="admin-header-actions">
+          <span id="admin-email-label" class="admin-chip"></span>
+          <button id="logout-btn" class="btn ghost">Logout</button>
+        </div>
+      </header>
+
+      <section class="admin-layout">
+        <div class="admin-form-column">
+          <h2>Add / Edit Menu Item</h2>
+          <form id="menu-form">
+            <input type="hidden" id="menu-id" />
+            <label class="field">
+              <span>Food name</span>
+              <input type="text" id="menu-name" required placeholder="Eg: Indori Poha & Jalebi" />
+            </label>
+            <label class="field">
+              <span>Description</span>
+              <textarea id="menu-description" rows="2" required placeholder="Short tasty description"></textarea>
+            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>Price (₹)</span>
+                <input type="number" id="menu-price" min="1" required />
+              </label>
+              <label class="field">
+                <span>Category</span>
+                <select id="menu-category" required>
+                  <option value="breakfast">Breakfast</option>
+                  <option value="snacks">Snacks</option>
+                  <option value="sweets">Sweets</option>
+                  <option value="beverages">Beverages</option>
+                </select>
+              </label>
+            </div>
+            <label class="field">
+              <span>Image URL</span>
+              <input
+                type="url"
+                id="menu-image-url"
+                required
+                placeholder="Paste image URL. If it fails on user side, a modal will appear."
+              />
+            </label>
+            <div class="field-row">
+              <label class="field checkbox-field">
+                <input type="checkbox" id="menu-is-veg" checked />
+                <span>Veg item</span>
+              </label>
+              <label class="field">
+                <span>Prep time</span>
+                <input type="text" id="menu-prep-time" placeholder="Eg: 20 min" />
+              </label>
+              <label class="field">
+                <span>Spice level</span>
+                <input type="text" id="menu-spice-level" placeholder="Mild / Medium / Spicy" />
+              </label>
+            </div>
+            <label class="field">
+              <span>Small badge text</span>
+              <input type="text" id="menu-tagline" placeholder="Eg: Indori Favourite" />
+            </label>
+            <div class="form-actions">
+              <button class="btn primary" type="submit" id="save-menu-btn">Save Item</button>
+              <button class="btn ghost" type="button" id="reset-form-btn">Clear Form</button>
+            </div>
+          </form>
+          <p class="muted note">
+            All admin changes are saved in browser storage (localStorage) and used as API data for the main website.
+          </p>
+        </div>
+
+        <div class="admin-table-column">
+          <div class="table-header">
+            <h2>Current Menu</h2>
+            <button class="btn ghost" id="restore-sample-btn">Restore Sample Data</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Food</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Veg</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="menu-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
+

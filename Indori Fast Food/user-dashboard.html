@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard • Indori Fast Food</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="user-dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">IF</span>
+      <div class="brand-text">
+        <h1>Indori Fast Food</h1>
+        <p>Your account & orders</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-root">
+    <aside class="dashboard-sidebar">
+      <div class="user-summary">
+        <div class="avatar-circle" id="avatar-circle"></div>
+        <div>
+          <h2 id="user-email"></h2>
+          <p id="user-created" class="muted-small"></p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-item active" data-view="profile">Profile</button>
+        <button class="sidebar-item" data-view="orders">My Orders</button>
+        <button class="sidebar-item" data-view="track">Track Order</button>
+        <button class="sidebar-item" data-view="address">Addresses</button>
+        <button class="sidebar-item" data-view="settings">Settings</button>
+      </nav>
+      <button class="btn ghost full-width" id="logout-user-btn">Logout</button>
+    </aside>
+
+    <section class="dashboard-content">
+      <section class="dash-view" id="view-profile">
+        <h2>Profile</h2>
+        <p class="muted-small">Update basic information for your account.</p>
+        <form id="profile-form" class="dash-form">
+          <label class="field">
+            <span>Email (cannot be changed)</span>
+            <input type="email" id="profile-email" disabled />
+          </label>
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" id="profile-name" placeholder="Your name" />
+          </label>
+          <label class="field">
+            <span>Phone</span>
+            <input type="tel" id="profile-phone" placeholder="10-digit number" />
+          </label>
+          <button class="btn primary" type="submit">Save Profile</button>
+        </form>
+      </section>
+
+      <section class="dash-view hidden" id="view-orders">
+        <h2>My Orders</h2>
+        <p class="muted-small">View your recent orders from Indori Fast Food.</p>
+        <div id="orders-list" class="orders-list"></div>
+      </section>
+
+      <section class="dash-view hidden" id="view-track">
+        <h2>Track Order</h2>
+        <p class="muted-small">Track the latest active order.</p>
+        <div id="track-container"></div>
+      </section>
+
+      <section class="dash-view hidden" id="view-address">
+        <h2>Address</h2>
+        <p class="muted-small">Change your saved delivery address.</p>
+        <form id="address-manage-form" class="dash-form">
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" id="addr-name-manage" required />
+          </label>
+          <label class="field">
+            <span>Phone</span>
+            <input type="tel" id="addr-phone-manage" required />
+          </label>
+          <label class="field">
+            <span>Address</span>
+            <input type="text" id="addr-line-manage" required />
+          </label>
+          <div class="field-row">
+            <label class="field">
+              <span>City</span>
+              <input type="text" id="addr-city-manage" required />
+            </label>
+            <label class="field">
+              <span>Pincode</span>
+              <input type="text" id="addr-pincode-manage" required />
+            </label>
+          </div>
+          <button class="btn primary" type="submit">Save Address</button>
+        </form>
+      </section>
+
+      <section class="dash-view hidden" id="view-settings">
+        <h2>Settings</h2>
+        <p class="muted-small">Simple preferences for your ordering experience.</p>
+        <div class="settings-group">
+          <label class="setting-item">
+            <input type="checkbox" id="pref-veg-only" />
+            <span>Show veg items first</span>
+          </label>
+          <label class="setting-item">
+            <input type="checkbox" id="pref-save-cart" />
+            <span>Remember my cart on this device</span>
+          </label>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="user-dashboard.js"></script>
+</body>
+</html>
+

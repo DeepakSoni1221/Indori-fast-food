@@ -1,0 +1,99 @@
+[
+  {
+    "id": "poha-jalebi",
+    "name": "Indori Poha & Jalebi",
+    "description": "Light, fluffy poha with sev, pomegranate and hot jalebis on the side.",
+    "price": 80,
+    "category": "breakfast",
+    "imageUrl": "https://images.pexels.com/photos/14386713/pexels-photo-14386713.jpeg",
+    "isVeg": true,
+    "rating": 4.7,
+    "prepTime": "20 min",
+    "spiceLevel": "Mild"
+  },
+  {
+    "id": "kachori",
+    "name": "Piping Hot Kachori",
+    "description": "Crispy golden kachori stuffed with spicy dal, served with chutneys.",
+    "price": 60,
+    "category": "snacks",
+    "imageUrl": "https://images.pexels.com/photos/18128303/pexels-photo-18128303/free-photo-of-delicious-samosas-with-sauce.jpeg",
+    "isVeg": true,
+    "rating": 4.5,
+    "prepTime": "18 min",
+    "spiceLevel": "Medium"
+  },
+  {
+    "id": "samosa",
+    "name": "Classic Aloo Samosa",
+    "description": "Street-style samosa with tangy tamarind and mint chutney.",
+    "price": 50,
+    "category": "snacks",
+    "imageUrl": "https://images.pexels.com/photos/5908232/pexels-photo-5908232.jpeg",
+    "isVeg": true,
+    "rating": 4.6,
+    "prepTime": "15 min",
+    "spiceLevel": "Medium"
+  },
+  {
+    "id": "pav-bhaji",
+    "name": "Masala Pav Bhaji",
+    "description": "Buttery pav bhaji loaded with veggies and Indori masala.",
+    "price": 120,
+    "category": "snacks",
+    "imageUrl": "https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg",
+    "isVeg": true,
+    "rating": 4.8,
+    "prepTime": "22 min",
+    "spiceLevel": "Medium"
+  },
+  {
+    "id": "sabudana-khichdi",
+    "name": "Sabudana Khichdi",
+    "description": "Popular Indori style sabudana khichdi with peanuts and lemon.",
+    "price": 90,
+    "category": "breakfast",
+    "imageUrl": "https://images.pexels.com/photos/11720067/pexels-photo-11720067.jpeg",
+    "isVeg": true,
+    "rating": 4.4,
+    "prepTime": "18 min",
+    "spiceLevel": "Mild"
+  },
+  {
+    "id": "jalebi-plate",
+    "name": "Crispy Jalebi Plate",
+    "description": "Freshly fried jalebis soaked in saffron sugar syrup.",
+    "price": 70,
+    "category": "sweets",
+    "imageUrl": "https://images.pexels.com/photos/1435900/pexels-photo-1435900.jpeg",
+    "isVeg": true,
+    "rating": 4.9,
+    "prepTime": "12 min",
+    "spiceLevel": "Sweet"
+  },
+  {
+    "id": "lassi",
+    "name": "Thick Matka Lassi",
+    "description": "Creamy lassi served in a kulhad with dry fruit topping.",
+    "price": 65,
+    "category": "beverages",
+    "imageUrl": "https://images.pexels.com/photos/1005407/pexels-photo-1005407.jpeg",
+    "isVeg": true,
+    "rating": 4.3,
+    "prepTime": "10 min",
+    "spiceLevel": "Sweet"
+  },
+  {
+    "id": "cold-coffee",
+    "name": "Shahi Cold Coffee",
+    "description": "Indore-style thick cold coffee with ice cream scoop.",
+    "price": 110,
+    "category": "beverages",
+    "imageUrl": "https://images.pexels.com/photos/4109990/pexels-photo-4109990.jpeg",
+    "isVeg": true,
+    "rating": 4.6,
+    "prepTime": "8 min",
+    "spiceLevel": "Sweet"
+  }
+]
+
